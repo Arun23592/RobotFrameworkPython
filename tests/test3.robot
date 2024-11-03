@@ -14,10 +14,10 @@ Validate Unsuccessful Login
     Select the link of child window
     Verify the user is switched to child window
     Grab the email id in the child window
-#    Switch to parent window and enter the email
 
 
-*** keywords ***
+
+*** Keywords ***
 open the browser with the mortgage payment url
     open browser  https://rahulshettyacademy.com/loginpagePractise/     browser=chrome
     maximize browser window
@@ -35,7 +35,11 @@ Verify the user is switched to child window
 
 Grab the email id in the child window
     ${text}=     get text        css:.red
-    switch window       MAIN
+    @{words}=    Split String       ${text}        at
+#    switch window       MAIN
+
+    ${text_split}=       Get From List      ${words}    1
+    log     ${text_split}
 
 
 
