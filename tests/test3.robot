@@ -41,6 +41,10 @@ Grab the email id in the child window
     ${text_split}=       Get From List      ${words}    1
     log     ${text_split}
     @{words_2}=   Split String        ${text_split}
+    ${email}=     Get From List       @{words_2}        0
+
+Switch to parent window and enter email
+    switch window
 
 
 
