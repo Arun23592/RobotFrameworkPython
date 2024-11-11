@@ -1,7 +1,5 @@
 *** Settings ***
-
-Library     SeleniumLibrary
-
+Library            SeleniumLibrary
 Documentation  To validate the Login form
 Test Teardown       close browser
 *** Variables ***
@@ -34,7 +32,7 @@ Verify the user is switched to child window
     element text should be      css:h1      DOCUMENTS REQUEST
 
 Grab the email id in the child window
-    ${text}=     get text        css:.red
+    ${text}=     GET TEXT          css:.red
     @{words}=    Split String       ${text}        at
 #    switch window       MAIN
 
@@ -44,7 +42,14 @@ Grab the email id in the child window
     ${email}=     Get From List       @{words_2}        0
 
 Switch to parent window and enter email
-    switch window
+    switch window       MAIN
+    TITLE SHOULD BE     LoginPage practise | Rahul Shetty Academy
+
+
+
+
+
+
 
 
 
