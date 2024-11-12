@@ -44,6 +44,7 @@ Grab the email id in the child window
 Switch to parent window and enter email
     switch window       MAIN
     TITLE SHOULD BE     LoginPage practise | Rahul Shetty Academy
+    TITLE SHOULD BE     LoginPage practise | Rahul Shetty Academ
 
 
 
